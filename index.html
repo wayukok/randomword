@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Word Generator</title>
+    <style>
+        /* CSS Styles */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f9;
+        }
+
+        #wordDisplay {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        #generateButton {
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #generateButton:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div id="wordDisplay">กดปุ่มเพื่อสุ่มคำ</div>
+    <button id="generateButton">สุ่ม</button>
+    <script>
+        // JavaScript for Random Word Generator
+
+        // List of words
+        const words = [
+            'ไม่่', 'ใช่', 'เคย', 'ไป', 'บ้าน', 'เที่ยว', 'เพื่อน', 'ครอบครัว',
+            'ไม่เคย', 'ไม่ใช่', 'กิน', 'ไม่กิน', 'วันนี้', 'ปีใหม่', 'วันหยุด', 'เรียน',
+            'ตรุจีน', 'สงกรานต์', 'ไปไหน', 'กล้อง', 'มอง', 'คอม', 'ดนตรี',
+            'กลอง'
+        ];
+
+        function getRandomWord() {
+            const randomIndex = Math.floor(Math.random() * words.length);
+            return words[randomIndex];
+        }
+
+        document.getElementById('generateButton').addEventListener('click', () => {
+            const randomWord = getRandomWord();
+            document.getElementById('wordDisplay').textContent = randomWord;
+        });
+    </script>
+</body>
+</html>
